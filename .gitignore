@@ -1,12 +1,6 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-# Virtual Environment
-venv/
-.venv/
 
 # PyCharm
 .idea/
@@ -17,15 +11,9 @@ reports/
 # Screenshots
 screenshots/
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# Pytest cache
+# Pytest
 .pytest_cache/
 
-# Environment files
-.env
-
-# Logs
-*.log
+# Virtual Environment
+venv/
+.venv/
