@@ -1,0 +1,3 @@
+from azure_utils.blob_uploader import upload_report_to_blob
+
+upload_report_to_blob()
