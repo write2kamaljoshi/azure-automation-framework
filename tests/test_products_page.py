@@ -5,11 +5,10 @@ from pages.login_page import LoginPage
 from pages.products_page import ProductsPage
 from azure_utils.keyvault_helper import get_secret
 
-email = get_secret("automation-email")
-password = get_secret("automation-password")
-
 
 def test_navigate_to_products_page(driver):
+    email = get_secret("automation-email")
+    password = get_secret("automation-password")
 
     login_page = LoginPage(driver)
     home_page = HomePage(driver)

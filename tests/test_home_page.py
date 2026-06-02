@@ -4,10 +4,10 @@ from pages.login_page import LoginPage
 from pages.home_page import HomePage
 from azure_utils.keyvault_helper import get_secret
 
-email = get_secret("automation-email")
-password = get_secret("automation-password")
 
 def test_verify_home_page_title(driver):
+    email = get_secret("automation-email")
+    password = get_secret("automation-password")
 
     login_page = LoginPage(driver)
     home_page = HomePage(driver)

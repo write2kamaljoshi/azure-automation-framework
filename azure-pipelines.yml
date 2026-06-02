@@ -10,15 +10,12 @@ steps:
   inputs:
     versionSpec: '3.12'
 
-- task: AzureCLI@2
-  displayName: 'Azure Login'
+- task: AzureKeyVault@2
   inputs:
     azureSubscription: 'sc-azure-sdet-learning'
-    scriptType: 'ps'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az account show
-      az keyvault secret list --vault-name kv-sdet-learning-01
+    KeyVaultName: 'kv-sdet-learning-01'
+    SecretsFilter: '*'
+    RunAsPreJob: false
 
 - script: |
     python -m pip install --upgrade pip
