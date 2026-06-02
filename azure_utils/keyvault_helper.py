@@ -50,10 +50,15 @@ def get_secret(secret_name):
 
     import os
 
-    print(f"Looking for secret: {secret_name}")
+    print("ENV VARIABLES:")
+
+    for key in os.environ:
+        if "automation" in key.lower() or "blob" in key.lower():
+            print(key)
 
     value = os.getenv(secret_name)
 
+    print(f"Looking for secret: {secret_name}")
     print(f"Found in env? {value is not None}")
 
     if value:

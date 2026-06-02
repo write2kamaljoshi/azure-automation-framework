@@ -30,3 +30,7 @@ steps:
 - script: |
     pytest
   displayName: 'Run Pytest Tests'
+  env:
+    automation-email: $(automation-email)
+    automation-password: $(automation-password)
+    blob-connection-string: $(blob-connection-string)
