@@ -34,3 +34,7 @@ steps:
     automation-email: $(automation-email)
     automation-password: $(automation-password)
     blob-connection-string: $(blob-connection-string)
+    
+- script: |
+    python upload_runner.py
+  displayName: 'Upload Report To Blob Storage'
