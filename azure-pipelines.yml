@@ -10,6 +10,15 @@ steps:
   inputs:
     versionSpec: '3.12'
 
+- task: AzureCLI@2
+  displayName: 'Azure Login'
+  inputs:
+    azureSubscription: 'sc-azure-sdet-learning'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az account show
+
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
@@ -18,4 +27,3 @@ steps:
 - script: |
     pytest
   displayName: 'Run Pytest Tests'
-  
