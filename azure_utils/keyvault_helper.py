@@ -48,10 +48,18 @@ KEY_VAULT_URL = "https://kv-sdet-learning-01.vault.azure.net/"
 
 def get_secret(secret_name):
 
-    pipeline_secret = os.getenv(secret_name)
+    import os
 
-    if pipeline_secret:
-        return pipeline_secret
+    print(f"Looking for secret: {secret_name}")
+
+    value = os.getenv(secret_name)
+
+    print(f"Found in env? {value is not None}")
+
+    if value:
+        return value
+
+    print("Using Key Vault SDK")
 
     credential = DefaultAzureCredential()
 

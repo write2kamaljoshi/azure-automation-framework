@@ -23,5 +23,10 @@ steps:
   displayName: 'Install Dependencies'
 
 - script: |
+    echo EMAIL=$(automation-email)
+    echo PASSWORD_EXISTS=$(automation-password)
+  displayName: 'Verify Key Vault Variables'
+
+- script: |
     pytest
   displayName: 'Run Pytest Tests'
