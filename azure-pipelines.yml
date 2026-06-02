@@ -18,6 +18,7 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: |
       az account show
+      az keyvault secret list --vault-name kv-sdet-learning-01
 
 - script: |
     python -m pip install --upgrade pip
